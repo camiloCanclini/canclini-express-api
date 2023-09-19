@@ -3,7 +3,7 @@
 import express from "express"
 import { configDotenv } from "dotenv"
 import cors from 'cors'
-import loginRouter from "./src/routes/login.router"
+import productRouter from "./src/routes/api.router.js"
 
 // APP CONFIG
 
@@ -11,6 +11,7 @@ configDotenv()
 
 // MAIN OBJS
 
+// eslint-disable-next-line no-undef
 const env = process.env
 const app = express()
 
@@ -21,10 +22,10 @@ app.use(cors())
 
 // EXPRESS ROUTERS
 
-app.use()
+app.use(productRouter)
 
 
 // INIT THE APP
 
-const port = env.PORT
+const port = env.PORT || 3000
 app.listen(port, () => console.log('The Application Is Running On Port: http://localhost:'+ port))
