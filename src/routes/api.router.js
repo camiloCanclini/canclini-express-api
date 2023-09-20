@@ -1,7 +1,8 @@
 // IMPORTS
 
 import express from 'express';
-import handler from '../handlers/api.handlers.js'
+import handler from '../handlers/api.handler.js'
+
 
 // OBJ
 
@@ -13,10 +14,11 @@ router.get('/products', handler.getProductsByFilter)
 
 router.get('/products', handler.getProducts)
 
-//router.get('/product/{idProduct}', handler.getProductById)
+router.get('/product/:idProduct', handler.getProductById)
 
 // eslint-disable-next-line no-unused-vars
 router.use(handler.errorHandler)
+
 
 // MODULE EXPORT
 
