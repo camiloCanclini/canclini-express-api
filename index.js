@@ -5,6 +5,7 @@ import { configDotenv } from "dotenv"
 import cors from 'cors'
 import productRouter from "./src/routes/api.router.js"
 import commonHandler from './src/handlers/common.handler.js'
+import authHandler from "./src/handlers/authentication.handler.js"
 
 // APP CONFIG
 
@@ -22,6 +23,10 @@ app.use(express.json())
 app.use(cors())
 
 // EXPRESS ROUTERS
+
+app.use(authHandler.checkAuthHandler)
+
+app.use(authHandler.notAuthHandler)
 
 app.use(productRouter)
 
