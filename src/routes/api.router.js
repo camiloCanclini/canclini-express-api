@@ -16,9 +16,6 @@ router.get('/products', handler.getProducts)
 
 router.get('/product/:idProduct', handler.getProductById)
 
-// eslint-disable-next-line no-unused-vars
-router.use(handler.errorHandler)
-
 
 // MODULE EXPORT
 

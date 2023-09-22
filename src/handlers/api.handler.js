@@ -6,13 +6,14 @@ import axios from 'axios'
 
 // eslint-disable-next-line no-unused-vars
 const getProducts = async (_req, res, next) => {
-	return await axios
+		await axios
 		.get('https://fakestoreapi.com/products')
 		.then((response) => {
-			return res.status(200).json(response.data)
+			//console.log(response.data);
+			res.status(200).json(response.data)
 		})
 		.catch((err) => {
-			next({ statusCodde: 500, errObj: err })
+			next({ statusCode: 500, errObj: err })
 		})
 }
 
@@ -73,18 +74,8 @@ const getProductById = async (req, res, next) => {
 		})
 }
 
-// eslint-disable-next-line no-unused-vars
-const errorHandler = (err, req, res, _next) => {
-	console.error(err)
-	res.status(err.statusCode || 500).json({
-		message: err.message || 'Internal server error',
-		statusCode: err.statusCode || 500,
-	})
-}
-
 export default {
 	getProducts,
 	getProductsByFilter,
-  getProductById,
-	errorHandler,
+  getProductById
 }

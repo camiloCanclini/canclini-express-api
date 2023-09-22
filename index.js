@@ -1,6 +1,7 @@
 // IMPORTS
 
 import express from "express"
+import bodyParser from "body-parser"
 import { configDotenv } from "dotenv"
 import cors from 'cors'
 import productRouter from "./src/routes/api.router.js"
@@ -19,16 +20,24 @@ const app = express()
 
 // EXPRESS CONFIG
 
+// parse application/x-www-form-urlencoded
+app.use(bodyParser.urlencoded({ extended: false }))
+
+// parse application/json
+app.use(bodyParser.json())
 app.use(express.json())
 app.use(cors())
 
 // EXPRESS ROUTERS
+app.post("/register", authHandler.registerUser)
 
 app.use(authHandler.checkAuthHandler)
 
-app.use(authHandler.notAuthHandler)
+//app.use(authHandler.notAuthHandler)
 
 app.use(productRouter)
+
+app.use(commonHandler.errorHandler)
 
 app.use(commonHandler.notFoundHandler)
 
