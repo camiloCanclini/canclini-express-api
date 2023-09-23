@@ -32,7 +32,7 @@ const registerUser = async (req, res, next) => {
 			})
 		}
 		
-		fs.readFile(path.resolve(path.join(cwd(), env.apiKeyFileName)), 'utf8', (err, data) => {
+		fs.readFile(path.resolve(path.join(cwd(), env.APIKEYFILENAME)), 'utf8', (err, data) => {
 			if (err) {
 				return next({
 					statusCode: 500
@@ -68,7 +68,7 @@ const registerUser = async (req, res, next) => {
 					jsonData[email] = userObj
 
 					// eslint-disable-next-line no-undef
-					fs.writeFile(path.resolve(path.join(cwd(), env.apiKeyFileName)) , JSON.stringify(jsonData, null, 2), 'utf8', (writeErr) => {
+					fs.writeFile(path.resolve(path.join(cwd(), env.APIKEYFILENAME)) , JSON.stringify(jsonData, null, 2), 'utf8', (writeErr) => {
 						if (writeErr) {
 							return next({ statusCode: 500 });
 						}
@@ -96,7 +96,7 @@ const checkAuthHandler = async (req, res, next) => {
 			message: "Authentication Required! Enter your API KEY or request for one"
 		})
 	}else{
-		fs.readFile(path.resolve(path.join(cwd(), env.apiKeyFileName)), 'utf8', (err, data) => {
+		fs.readFile(path.resolve(path.join(cwd(), env.APIKEYFILENAME)), 'utf8', (err, data) => {
 			if (err) {
 				return next({
 					statusCode: 500
