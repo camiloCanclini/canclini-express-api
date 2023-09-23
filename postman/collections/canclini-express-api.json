@@ -1,0 +1,179 @@
+{
+	"info": {
+		"_postman_id": "40ba9200-3009-4905-99a3-e87d35708e69",
+		"name": "canclini-express-api",
+		"description": "# How to Start\n\nFirst of all you need to get an api key to make the request, so go to make the request \\`Generate ApiKey\\`. You will send an email and a password to the API, and then it will gives your api key. Once You have it we can go to make the rest of the request.",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_uid": "25083767-40ba9200-3009-4905-99a3-e87d35708e69"
+	},
+	"item": [
+		{
+			"name": "ApiKey System",
+			"item": [
+				{
+					"name": "Generate ApiKey",
+					"id": "cddd1b80-d973-438e-a7af-67d5b451a6e5",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"email\": \"testing@gmail.com\",\n    \"password\": \"superpass123\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{domain}}{{port}}/register",
+							"host": [
+								"{{domain}}{{port}}"
+							],
+							"path": [
+								"register"
+							]
+						},
+						"description": "If the email is already loaded you will receive a 409 http code (Conflict). Structure the email correctly and the password only can has 15 characters"
+					},
+					"response": []
+				}
+			],
+			"id": "1e65a864-c346-4d1b-9f2a-7225ce0512f9",
+			"description": "Here's the request that allows the users manage their api keys."
+		},
+		{
+			"name": "Products Requests",
+			"item": [
+				{
+					"name": "Products",
+					"id": "149af986-500f-40ab-ad53-f26c01f9d68e",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "apikey",
+							"apikey": [
+								{
+									"key": "value",
+									"value": "{{apikey}}",
+									"type": "string"
+								},
+								{
+									"key": "key",
+									"value": "apikey",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{domain}}{{port}}/products",
+							"host": [
+								"{{domain}}{{port}}"
+							],
+							"path": [
+								"products"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Products By Filter",
+					"id": "96c0fb61-f9b4-4c78-a1c2-13c09f287dc6",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "apikey",
+							"apikey": [
+								{
+									"key": "value",
+									"value": "{{apikey}}",
+									"type": "string"
+								},
+								{
+									"key": "key",
+									"value": "apikey",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "",
+								"value": "",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{domain}}{{port}}/products?category=electronics",
+							"host": [
+								"{{domain}}{{port}}"
+							],
+							"path": [
+								"products"
+							],
+							"query": [
+								{
+									"key": "category",
+									"value": "electronics"
+								}
+							]
+						},
+						"description": "The categories are: \"electronics\", \"jewelery\", \"men's clothing\", \"women's clothing\"."
+					},
+					"response": []
+				},
+				{
+					"name": "Product By ID",
+					"id": "26a2e7c5-c25e-4c37-bbab-1b4c19fc346a",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "apikey",
+							"apikey": [
+								{
+									"key": "value",
+									"value": "{{apikey}}",
+									"type": "string"
+								},
+								{
+									"key": "key",
+									"value": "apikey",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{domain}}{{port}}/product/1",
+							"host": [
+								"{{domain}}{{port}}"
+							],
+							"path": [
+								"product",
+								"1"
+							]
+						},
+						"description": "There are currently 20 products loaded."
+					},
+					"response": []
+				}
+			],
+			"id": "d3beca9d-0c2d-43f9-a48b-c21de7e7e455",
+			"description": "Here's the request that allows the users get the products loaded in the api."
+		}
+	]
+}
