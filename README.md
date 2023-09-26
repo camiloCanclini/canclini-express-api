@@ -29,4 +29,8 @@ First of all, we need to set up the app.
 
 ## Postman Documentation (Requests)
 
+**You will need to register first before to send the requests (/register)**
+
+![](https://cdn.cookielaw.org/logos/70564414-548a-4286-8ad7-04d95b172a08/e26443c0-68d1-47c8-b8fc-9bc765da2e95/3a159462-db70-43cf-a27d-f602a6baed44/pm-logo-horiz.png)
+
 [Postman Documentation](https://documenter.getpostman.com/view/25083767/2s9YJXYjdD)
