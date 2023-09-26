@@ -27,8 +27,6 @@ First of all, we need to set up the app.
    ```
    The last one will run the app with `nodemon`
 
-## Postman Documentation
+## Postman Documentation (Requests)
 
-[Postman Documentation](https://warped-satellite-722241.postman.co/workspace/My-Workspace~3f4cf9bb-70a9-415c-8d23-c04017c5e8d9/api/b3af2e90-7c7d-4037-8602-909b36553313?action=share&creator=25083767&active-environment=25083767-5292cd01-7760-4e4f-a6c1-ea635f000679)
-
-[Postman Collection Documentation](https://warped-satellite-722241.postman.co/workspace/3f4cf9bb-70a9-415c-8d23-c04017c5e8d9/api/b3af2e90-7c7d-4037-8602-909b36553313/documentation/25083767-40ba9200-3009-4905-99a3-e87d35708e69?branch=main)
+[Postman Documentation](https://documenter.getpostman.com/view/25083767/2s9YJXYjdD)
