@@ -5,8 +5,9 @@ import bodyParser from "body-parser"
 import { configDotenv } from "dotenv"
 import cors from 'cors'
 import productRouter from "./src/routes/api.router.js"
+import authenticationRouter from "./src/routes/authentication.router.js"
 import commonHandler from './src/handlers/common.handler.js'
-import authHandler from "./src/handlers/authentication.handler.js"
+//import authHandler from "./src/handlers/authentication.handler.js"
 
 // APP CONFIG
 
@@ -29,9 +30,7 @@ app.use(express.json())
 app.use(cors())
 
 // EXPRESS ROUTERS
-app.post("/register", authHandler.registerUser)
-
-app.use(authHandler.checkAuthHandler)
+app.use(authenticationRouter)
 
 //app.use(authHandler.notAuthHandler)
 
